@@ -1,0 +1,44 @@
+
+This is a somewhat brain-dead port of GNU barcode 0.95.  I found that
+configure wouldn't run under OS/2, so I compiled it on a SUN Solaris
+box copied the Makefile and made a few minor changes to get it to work
+under OS/2.  I didn't bother with install, just compiling and linking.
+
+The excutables are barcode.exe and sample.exe.  Just type barcode -h
+to see the help and sample.exe > sample.ps to create the sample page.
+
+I think you need at least EMX (I'm using 0.9c) to run this and some
+sort of postscript viewer such as Ghostscript/Ghostview.  If there are
+other dependencies, I'm not sure what they are.
+
+Files ending in ~ are the originals before I changed them... so you
+can see what changes I made.
+
+The author, Alessandro Rubini, has a newer version, 9.51, on his CVS
+server, but I don't have CVS installed yet, so I haven't ported that
+version.  Apparently the new version has better portability, so maybe
+configure will work with that version.  If you want to work on this
+yourself, check out:  http://gnu.systemy.it/software/#cvs
+
+Barcode related links:
+
+  link	                                               Description
+  -------------------------------------------------    ---------------------
+  http://www.gnu.org/software/barcode/barcode.html     GNU Barcode home page
+
+  http://thor-gw.phys.ualberta.ca/barcode/             Bar Code generator
+  http://www.deBarcode.com/deBarcode/html/index.html   Decoder & generator
+  http://www.psoft.sk/eanspec/eansamp.htm              Barcode examples
+
+  http://www.popbeads.org/Software/CCScan/             Java :CueCat decoder
+  http://freshmeat.net/news/2000/08/28/967445655.html  Linux :CueCat decoder
+  http://www.flyingbuttmonkeys.com/foocat/             Linux :CueCat decoder
+  http://www.mit.edu/~colin/cat.pl                     Perl :CueCat decoder
+  http://hobbes.nmsu.edu/pub/os2/dev/rexx/rexxcat.zip  Rexx :CueCat decoder
+
+  http://www.cuecat.com/                               :CueCat home page
+
+
+My Web page: http://www.markcrocker.com/~mcrocker
+             (email may change soon as I'm moving at the end of
+             2000-Oct)

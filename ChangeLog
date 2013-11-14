@@ -1,0 +1,187 @@
+2000-02-03  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+====> Version 0.95 released to ftp.prosa.it and ftp.gnu.org
+
+2000-01-26  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* code128.c (Barcode_128_encode): new encoding: full-featured code128
+
+	* README: added reference to original ftp site
+
+2000-01-05  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* main.c (get_page_geometry): avoid using snprintf(), missing in HP/UX
+
+	* code39.c (Barcode_39_verify): added missing parens (a syntax error,
+		but only apparent where islower() is not a macro). Thanks to
+		Alexandre Oliva for finding it out.
+
+2000-01-04  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* doc/doc.barcode (The API): removed spurious "flags" argument
+		from description of Barcode_Encode_and_Print().
+		Thanks to Willy Wittesaele for noting the error.
+
+1999-12-24  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* main.c (get_geometry): fixed the y margin (thanks to Steve Kunath)
+
+====> Version 0.94 released to ftp.prosa.it and ftp.gnu.org
+
+1999-10-24  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* INSTALL: added instructions to install on a Debian GNU/Linux system
+
+	* debian/*: edited information for proper Debian support
+	
+	* debian/rules (binary-arch): new file, from "deb-make"
+
+	* Makefile.in (install): added "-m 0644" to install non-executables
+
+	* code128.c (Barcode_128b_encode): fixed checksum calculation.
+
+====> Version 0.93 released to ftp.prosa.it and ftp.gnu.org
+
+1999-09-26  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* doc/doc.barcode: fixed the rendering of complex options (-g and -t)
+	Removed extra "table of contents" heading in the ps output
+	Changed attribution on cover page
+
+	* main.c (get_table and others): be more specific in error msgs
+	(get_page_geometry): numeric specification is according to "-u"
+	(get_table): accept unsymmetric margin specification
+	(option_table): added "-u" to accept "cm", "mm", "in", "pt"
+	(get_page_geometry): bugfix: numeric spec was always consideder mm
+
+	* cmdline.c (commandline): don't always print help
+
+	* Makefile.in ($(INFO)): added missing dependency: distributed docs
+		formats were out of date with distributed doc source.
+
+1999-09-13  Alessandro Rubini  <rubini@amelia.prosa.it>
+
+	* main.c (main): print tables: y used xmargin (Tim Withers,Jon Bakken)
+
+1999-09-06  Alessandro Rubini  <rubini@plinio.prosa.it>
+
+	* Makefile.in: prevent -Wall when compiling getopt.
+
+	* i25.c, ean.c, ps.c: switched to unsigned char, to prevent warnings
+		on newer gcc's (thanks Al Piszcz)
+
+====> Version 0.92 released to ftp.prosa.it and ftp.gnu.org
+
+1999-08-31  Alessandro Rubini  <rubini@plinio.prosa.it>
+
+	* i25.c: the right guard was thinner than other bars
+
+	* doc/doc.barcode: spelling and manpage fixes (thanks Joachim Schaaf)
+
+====> Version 0.91.4 released to ftp.prosa.it
+
+1999-08-23  Thad Floryan <thad@thadlabs.com>
+
+	* main.c (strerror): replacement strerror selected by autoconf
+
+1999-08-06  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* changed all "ENODATA" in "EINVAL", as some system miss ENODATA
+
+	* Makefile.in (all): removed ".depend" from all, as it needs gcc
+
+	* i25.c (Barcode_i25_encode): fixed wrong free() in an unlinely path
+
+	* ean.c (Barcode_ean_encode): don't use sprintf's result, as some
+	systems return a char pointer instead of the number of chars.
+
+	* configure.in: new file, as autoconf support is being added
+
+====> Version 0.91.3 released to ftp.prosa.it
+
+1999-08-05  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* code128.c (Barcode_128c_encode): fixed malloc of textinfo (was short)
+
+	* i25.c (Barcode_i25_encode): new encoding: interleaved 2 of 5
+
+	* ean.c (Barcode_ean_encode): enlarged static "text", to fit add-5
+
+	* code128.c (Barcode_128b_encode): new encoding: 128-B 
+
+====> Version 0.91.2 released to ftp.prosa.it
+
+1999-08-04  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* bookland/bookland.py: upgraded to version 0.06 (Judas Milgram)
+
+	* ean.c (Barcode_ean_encode): fixed layout of 1st/last digit in UPC-A
+
+	* code128.c (Barcode_128c_encode): fixed checksum calculation
+
+====> Version 0.91.1 released to ftp.prosa.it
+
+1999-07-09  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* sample.c (main): due changes to show code128-C
+
+	* code128.c (Barcode_128c_encode): implemented code 128-C
+
+	* ps.c (Barcode_ps_print): Accept float position and font size
+
+	* code39.c (Barcode_39_encode): reduced font (looked too big)
+
+====> Version 0.91 released to both ftp.prosa.it and ftp.gnu.org
+
+1999-07-08  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* ps.c (Barcode_ps_print): shrink all the bars by 0.15 points
+	(Barcode_ps_print): Use Helvetica as font, not Courier-Bold
+	(Barcode_ps_print): remember previous font to make shorter ps output
+
+1999-07-07  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* bookland/bookland.py: new enntry, by Judah Milgram.
+
+	* ean.c (Barcode_isbn_verify): fixed bug with "-X" codes (thanks Judah)
+
+====> Version 0.90.3 released to ftp.prosa.it/pub/software
+
+1999-07-07  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* doc/doc.barcode: fixed the "BUGS" section (remove fixed stuff)
+
+	* ean.c (Barcode_ean_encode): added '+' markers in partial and textinfo
+
+	* ps.c (Barcode_ps_print): added support for text over bars ('+' mode)
+
+====> Version 0.90.2, internal checkpoint
+
+1999-07-06  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* Makefile: dirty autodetect of libpaper
+
+	* main.c (get_page_geometry): parse a cmdline argument (mcm@glisco.it)
+	(main): added "--version"
+	(main): added diagnostic message for unencodable strings
+
+====> Version 0.90.1 released to ftp.prosa.it/pub/software
+
+1999-07-03  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* barcode.h: removed BARCODE_OUT_PG_* as only the library doesn't
+	need to hack with the page size.
+
+	* ean.c (Barcode_ean_encode): supplemental 2 and 5 encodings (no text)
+
+	* library.c: use unsigned char all over the place, to prevent warnings
+
+1999-07-01  Alessandro Rubini  <rubini@morgana.systemy.it>
+
+	* ean.c: added EAN-8 and UPC-E support
+
+	* Updated the address of the FSF in any source file 
+
+	* README: new file. 
+
+====> Version 0.90 is the first public release. No Changelog up to now.
